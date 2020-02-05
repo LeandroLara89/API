@@ -1,26 +1,23 @@
 <?php
 return [
     'settings' => [
-        'displayErrorDetaills' => true, // set to false in production
-        'addContentLengthHeader' => false, // Allow the web server to
-        //send the content-length header
+        'displayErrorDetails' => true, // set to false in production
+        'addContentLengthHeader' => false, // Allow the web server to send the content-length header
 
         // Renderer settings
         'renderer' => [
-            'template_path' => __DIR__ . '/../templates/';
+            'template_path' => __DIR__ . '/../templates/',
         ],
 
-        // Monlogs settings
+        // Monolog settings
         'logger' => [
             'name' => 'slim-app',
-            'path' => isset($_ENV['docker']) ? 'php://stdout' :
-            __DIR__ . '/../logs/app.log',
+            'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
-            
         ],
 
-        //DB settings
-        'db' => [
+        // DB settings
+        'db' =>    [
             'driver'    => 'mysql',
             'host'      => 'localhost',
             'database'  => 'slim',
